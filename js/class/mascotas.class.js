@@ -1,8 +1,8 @@
  
- class Mascotas {
+ class Mascota {
     constructor(id, img, nombre, vacunas, tipo)
-    {   this.img=img;
-        this.id=id;
+    {   this.id=id;
+        this.img=img;
         this.nombre=nombre;
         this.vacunas=vacunas;
         this.tipo=tipo;

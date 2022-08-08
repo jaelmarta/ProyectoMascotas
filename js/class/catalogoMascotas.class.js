@@ -3,9 +3,9 @@ class CatalogoMascotas {
         this.mascotas = mascotas;
     }
 
-    agregarMascota(mascotas) {
+    /*agregarMascota(mascotas) {
         this.mascotas.push(mascotas);
-    }
+    }*/
 
     darCantidad() {
         return this.mascotas.length;

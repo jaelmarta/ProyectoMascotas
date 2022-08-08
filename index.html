@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script defer src="js/mascotas.class.js"></script>
-<script defer src="js/catalogoMascotas.class.js"></script>
-<script defer src="js/proyectoMascotas.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="js/class/mascotas.class.js"></script>
+    <script defer src="js/class/catalogoMascotas.class.js"></script>
+    <script defer src="js/proyectoMascotas.js"></script>
+    <link rel="stylesheet" href="sass/styles.css">
+    <title>Proyecto Mascotas</title>
 </head>
+
 <body>
-    <h1>Proyecto Mascotas</h1>
-    <h2>Esta es una página de adopción de mascotas</h2>
-    <div id="mainContent"></div>
-    <div id="adoptarAnimal"></div>
-    <div id="animalesEnAdopcion"></div>
+    <header>
+        <h1>Proyecto Mascotas</h1>
+        <h2>Esta es una página de adopción de mascotas</h2>
+        <nav>
+            <div id="mainMenu">
+                <ul>
+                    <li><a href="pages/adoptar.html"> Quiero adoptar</li>
+                    <li><a href="pages/darAdopcion.html">Quiero dar en adopción</li>
+                    <li><a href="pages/contacto.html">Contacto</li>
+                </ul>
+                <div>
+                    <input type="text" name="buscador" id="buscador" placeholder="Buscar...">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <div id="mainContent"></div>
+        <div id="adoptarAnimal"></div>
+        <div id="animalesEnAdopcion"></div>
+        
+
+    </main>
+    <footer>
+        <button id="darkMode">Dark Mode</button>
+        <button id="ligthMode">Ligth Mode</button>
+    </footer>
+
+
 </body>
+
 </html>

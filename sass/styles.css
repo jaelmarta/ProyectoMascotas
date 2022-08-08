@@ -1,0 +1,7 @@
+ul li {
+  display: inline;
+  position: -webkit-sticky;
+  position: sticky;
+  margin: 5%;
+  justify-content: flex-end;
+}/*# sourceMappingURL=styles.css.map */
