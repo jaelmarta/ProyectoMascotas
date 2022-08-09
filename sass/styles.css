@@ -1,7 +1,7 @@
-ul li {
-  display: inline;
-  position: -webkit-sticky;
-  position: sticky;
+* {
+  font-family: "Varta", sans-serif;
+}
+
+.mainMenu {
   margin: 5%;
-  justify-content: flex-end;
 }/*# sourceMappingURL=styles.css.map */
