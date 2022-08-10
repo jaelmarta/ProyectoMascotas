@@ -7,6 +7,7 @@
     <script defer src="js/class/mascotas.class.js"></script>
     <script defer src="js/class/catalogoMascotas.class.js"></script>
     <script defer src="js/proyectoMascotas.js"></script>
+    <script src="https://kit.fontawesome.com/059d8a4b62.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="sass/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200&family=Maven+Pro:wght@500&family=Quicksand:wght@300;400&family=Varta:wght@300&display=swap" rel="stylesheet">
     <title>Proyecto Mascotas</title>
@@ -14,6 +15,9 @@
 
 <body>
     <header>
+        <div >
+        <img src="./img/ProyectoLOGO.png" class="logo">
+        </div>
         <h1>Proyecto Mascotas</h1>
         <h2>Esta es una página de adopción de mascotas</h2>
         <nav>
@@ -30,6 +34,7 @@
         </nav>
     </header>
     <main>
+        
 
         <div id="mainContent"></div>
         <div id="adoptarAnimal"></div>
@@ -38,8 +43,10 @@
 
     </main>
     <footer>
-        <button id="darkMode">Dark Mode</button>
-        <button id="ligthMode">Ligth Mode</button>
+        <div class="darkLightMode">
+        <button id="lightMode"><i class="fa-solid fa-sun"></i></button>
+        <button id="darkMode"><i class="fa-solid fa-moon"></i></button>
+        </div>
     </footer>
 
 

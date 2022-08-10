@@ -26,9 +26,10 @@ function mostrarMenu() {
 
 function menuNavegacion(navMenu) {
   const nodoMenu = document.getElementById("mainMenu");
-  const botonMenu = document.createElement("button");
+  const botonMenu = document.createElement("button"); 
+  botonMenu.classList.add("boton");
   botonMenu.innerHTML = navMenu;
-  var functionName ="";
+  let functionName ="";
     if(navMenu === "Quiero adoptar") 
     {
       functionName = mostrarQuieroAdoptar();
@@ -47,7 +48,9 @@ function menuNavegacion(navMenu) {
 
 };
 
-function mostrarQuieroAdoptar() {}
+function mostrarQuieroAdoptar() {
+
+}
 function mostrarQuieroDarEnAdopcion() {}
 function mostrarContacto() {}
 /*
@@ -75,8 +78,7 @@ function tiposDeMascotas() {
   adminNode.appendChild(boton);
 }*/
 
-function quieroDarEnAdopcion() {}
-
+//function quieroDarEnAdopcion() {}
 //ACA IRIA FORMULARIO DE ADOPCION
 /* {let img = prompt("Ingrese una imagen de la mascota");
   let nombre = prompt("Ingrese una nueva mascota");
@@ -123,19 +125,19 @@ function ordenarMascotas() {
   catalogoMascotas.ordenarMascotas();
 }
 
-cargarPreferencias();
-programarBotones();
+modoLightDark();
+botonesLightDark();
 
-function cargarPreferencias() {
+function modoLightDark() {
   const mode = localStorage.getItem("mode");
   if (mode) {
     cambiarModo(mode);
   }
 }
 
-function programarBotones() {
+function botonesLightDark() {
   programarModo("dark");
-  programarModo("ligth");
+  programarModo("light");
 }
 
 function programarModo(modo) {
@@ -147,8 +149,8 @@ function programarModo(modo) {
 
 function cambiarModo(modo) {
   if (modo === "dark") {
-    document.body.setAttribute("style", "background-color:black;color:white");
-  } else if (modo === "ligth") {
+    document.body.setAttribute("style", "background-color:black;color:white;");
+  } else if (modo === "light") {
     document.body.setAttribute("style", "background-color:white;color:black");
   }
   localStorage.setItem("mode", modo);
