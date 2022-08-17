@@ -2,6 +2,30 @@
 Proyecto Mascotas
 */
 
+let timerInterval
+Swal.fire({
+  title: 'Bienvenido!',
+  html: 'Esto es una página de adopción de mascotas',
+  timer: 2000,
+  timerProgressBar: true,
+  color:'#fe9393',
+  background: '#fff',
+  backdrop: `
+    rgba(0,0,123,0.4)
+  `,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+})
+
+
 const mascotas = [
   { id: 1, img: "", nombre: "Emma", vacunas: 5, tipo: "Gato", edad: "1" },
   { id: 3, img: "", nombre: "Godzilla", vacunas: 2, tipo: "Gato", edad: "1" },
@@ -26,33 +50,31 @@ function mostrarMenu() {
 
 function menuNavegacion(navMenu) {
   const nodoMenu = document.getElementById("mainMenu");
-  const botonMenu = document.createElement("button"); 
+  const botonMenu = document.createElement("button")
   botonMenu.classList.add("boton");
   botonMenu.innerHTML = navMenu;
-  let functionName ="";
-    if(navMenu === "Quiero adoptar") 
-    {
-      functionName = mostrarQuieroAdoptar();
-    } 
-    else if (navMenu === "Quiero dar en adopcion") 
-    {
-      functionName = mostrarQuieroDarEnAdopcion();
-    } 
-    else if (navMenu === "Contacto") 
-    {
-      functionName = mostrarContacto();
-    }
-  
-    botonMenu.addEventListener("click", functionName)
-    nodoMenu.appendChild(botonMenu);
+  let functionName = "";
+  if (navMenu === "Quiero adoptar") {
+    functionName = mostrarQuieroAdoptar();
+  } else if (navMenu === "Quiero dar en adopcion") {
+    functionName = mostrarQuieroDarEnAdopcion();
+  } else if (navMenu === "Contacto") {
+    functionName = mostrarContacto();
+  }
 
-};
-
-function mostrarQuieroAdoptar() {
-
+  botonMenu.addEventListener("click", mostrarQuieroAdoptar());
+  botonMenu.addEventListener("click", mostrarQuieroDarEnAdopcion());
+  botonMenu.addEventListener("click", mostrarContacto());
+  nodoMenu.appendChild(botonMenu);
 }
-function mostrarQuieroDarEnAdopcion() {}
-function mostrarContacto() {}
+
+function mostrarQuieroAdoptar() {  }
+function mostrarQuieroDarEnAdopcion() { }
+function mostrarContacto() { }
+
+
+
+
 /*
 quieroAdoptar();
 tiposDeMascotas();
@@ -130,9 +152,8 @@ botonesLightDark();
 
 function modoLightDark() {
   const mode = localStorage.getItem("mode");
-  if (mode) {
-    cambiarModo(mode);
-  }
+
+  mode && cambiarModo(mode);
 }
 
 function botonesLightDark() {

@@ -2,26 +2,47 @@
   font-family: "Varta", sans-serif;
 }
 
-#mainMenu {
+header .flexContainer {
+  display: -ms-flex;
+  display: flex;
+}
+header .flexContainer div {
+  width: 33%;
+  padding: 10px;
+}
+header .searchBar {
   display: flex;
   justify-content: flex-end;
+  max-height: 3em;
+  align-items: center;
+  margin-top: 5%;
+}
+header .logo {
+  max-height: 15em;
+  width: auto;
+  margin-left: 2%;
+}
+header #mainMenu {
+  display: flex;
+  justify-content: space-between;
   margin-right: 2%;
+  align-items: center;
   top: 0;
 }
-#mainMenu .boton {
+header #mainMenu .boton {
   width: 100px;
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(0, 0, 0);
+  border: 0px solid rgb(0, 0, 0);
   cursor: hand;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 700;
+  font-size: 1em;
 }
-
-header .logo {
-  max-height: 20em;
-  width: auto;
+header #mainMenu .boton:hover {
+  background-color: rgb(236, 183, 183);
+  border: 2px solid rgb(0, 0, 0);
 }
 
 footer {
@@ -30,6 +51,10 @@ footer {
   bottom: 0px;
   height: 10%;
   width: 100%;
+}
+footer button {
+  background-color: white;
+  border: 0px;
 }
 footer .darkLightMode {
   display: flex;
