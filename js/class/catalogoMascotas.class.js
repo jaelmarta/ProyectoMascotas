@@ -34,7 +34,7 @@ class CatalogoMascotas {
     }
   }
   modificarMascotas(tipoABuscar, nombre, tipo, vacunas, edad) {
-    let mascotasEncontradas = this.mascotass.find((mascotas) =>
+    let mascotasEncontradas = this.mascotas.find((mascotas) =>
       mascotas.tipo.includes(tipoABuscar)
     );
     if (mascotasEncontradas) {

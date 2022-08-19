@@ -2,150 +2,66 @@
 Proyecto Mascotas
 */
 
-let timerInterval
-Swal.fire({
-  title: 'Bienvenido!',
-  html: 'Esto es una página de adopción de mascotas',
-  timer: 2000,
-  timerProgressBar: true,
-  color:'#fe9393',
-  background: '#fff',
-  backdrop: `
-    rgba(0,0,123,0.4)
-  `,
-  didOpen: () => {
-    Swal.showLoading()
-    const b = Swal.getHtmlContainer().querySelector('b')
-    timerInterval = setInterval(() => {
-      b.textContent = Swal.getTimerLeft()
-    }, 100)
-  },
-  willClose: () => {
-    clearInterval(timerInterval)
-  }
-})
-
-
 const mascotas = [
-  { id: 1, img: "", nombre: "Emma", vacunas: 5, tipo: "Gato", edad: "1" },
-  { id: 3, img: "", nombre: "Godzilla", vacunas: 2, tipo: "Gato", edad: "1" },
-  { id: 4, img: "", nombre: "Luz", vacunas: 6, tipo: "Perro", edad: "11" },
-  { id: 5, img: "", nombre: "Riff", vacunas: 50, tipo: "Perro", edad: "9" },
-  { id: 6, img: "", nombre: "Bugs", vacunas: 40, tipo: "Conejo", edad: "4" },
-  { id: 7, img: "", nombre: "Lucas", vacunas: 45, tipo: "Pato", edad: "2" },
-  { id: 8, img: "", nombre: "Rolo", vacunas: 3, tipo: "Caballo", edad: "5" },
+  new Mascota(1, "./img/Emma.png", "Emma", 5, "Gato", "1"),
+  new Mascota(2, "./img/Godzilla.jpeg", "Godzilla", 2, "Gato", "1"),
+  new Mascota(3, "./img/Luz.jpg", "Luz", 6, "Perro", "11"),
+  new Mascota(4, "./img/Riff.jpeg", "Riff", 12, "Perro", "9"),
+  new Mascota(5, "./img/Bugs.jpg", "Bugs", 6, "Conejo", "4"),
+  new Mascota(6, "./img/Lucas.jpg", "Lucas", 8, "Pato", "2"),
+  new Mascota(7, "./img/Rolo.jpg", "Rolo", 3, "Caballo", "5"),
 ];
-
+function id() {
+  mascotas.forEach((e) => (i = id), i > 1, i++);
+  console.log(id);
+}
 const catalogoMascotas = new CatalogoMascotas(mascotas);
 console.log("CATALOGO MASCOTAS", catalogoMascotas.mascotas);
 
-const navMenu = ["Quiero adoptar", "Quiero dar en adopcion", "Contacto"];
-mostrarMenu();
 
-function mostrarMenu() {
-  navMenu.forEach((navMenu) => {
-    menuNavegacion(navMenu);
+
+
+const listarMascotas = (mascotasLista) => {
+  const mascotasDisponibles = document.getElementById("mascotasDisponibles");
+  mascotasDisponibles.innerHTML ="";
+  mascotasLista.forEach((mascotas) => {
+    mascotasDisponibles.innerHTML = `<div class="cad col-sm-12 col-md-6 col-lg-3 m-2" style="width: 15rem;">
+                                      <div class="col">
+                                        <div class="card">
+                                        <img src=${mascotas.img} class="card-img-top" alt="${mascotas.nombre}">
+                                          <div class="card-body">
+                                            <h5 class="card-title">${mascotas.nombre}</h5>
+                                            <p class="card-text">Soy un ${mascotas.tipo} </p>
+                                            <p class="card-text">tengo ${mascotas.edad} años</p>
+                                            <p class="card-text">y tengo ${mascotas.vacunas} vacunas</p>
+                                            <div class=adoptarMascota>
+                                            <button type="button" class="btn btn-primary" onclick="adoptarMascotaForm">Adoptar!</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                       </div>
+                                      </div>`;
   });
 }
-
-function menuNavegacion(navMenu) {
-  const nodoMenu = document.getElementById("mainMenu");
-  const botonMenu = document.createElement("button")
-  botonMenu.classList.add("boton");
-  botonMenu.innerHTML = navMenu;
-  let functionName = "";
-  if (navMenu === "Quiero adoptar") {
-    functionName = mostrarQuieroAdoptar();
-  } else if (navMenu === "Quiero dar en adopcion") {
-    functionName = mostrarQuieroDarEnAdopcion();
-  } else if (navMenu === "Contacto") {
-    functionName = mostrarContacto();
-  }
-
-  botonMenu.addEventListener("click", mostrarQuieroAdoptar());
-  botonMenu.addEventListener("click", mostrarQuieroDarEnAdopcion());
-  botonMenu.addEventListener("click", mostrarContacto());
-  nodoMenu.appendChild(botonMenu);
-}
-
-function mostrarQuieroAdoptar() {  }
-function mostrarQuieroDarEnAdopcion() { }
-function mostrarContacto() { }
+listarMascotas(mascotas);
 
 
+  const mascotaABuscar = document.getElementById("searchButton");
+  mascotaABuscar.addEventListener("click", ()=> {
+    const buscadorMascotas=document.getElementById("buscador").value;
+    filtrarMascotas(buscadorMascotas);
 
-
-/*
-quieroAdoptar();
-tiposDeMascotas();
-
-/*function quieroAdoptar() {
-  var boton = document.createElement("button");
-  boton.innerText = "QUIERO ADOPTAR";
-  boton.addEventListener("click", () => {
-    tiposDeMascotas();
   });
-  const adminNode = document.getElementById("adoptarAnimal");
-  adminNode.appendChild(boton);
+ 
+  const buscadorMascotas= document.getElementById("buscador");
+  buscadorMascotas.addEventListener("keydown", ()=> {
+    filtrarMascotas(buscadorMascotas.value);
+  })
+function filtrarMascotas(buscadorMascotas) {
+const filtradas = mascotas.filter((mascotas)=>mascotas.nombre.toUpperCase().indexOf(buscadorMascotas)!==-1);
+  listarMascotas(filtradas)
 }
 
-function tiposDeMascotas() {
-  var boton = document.createElement("button");
-  boton.innerText = "PERRO";
-  boton.innerText = "GATO";
-  boton.innerText = "CONEJO";
-  boton.innerText = "PATO";
-  boton.innerText = "CABALLO";
-  const adminNode = document.getElementById("animalesEnAdopcion");
-  adminNode.appendChild(boton);
-}*/
-
-//function quieroDarEnAdopcion() {}
-//ACA IRIA FORMULARIO DE ADOPCION
-/* {let img = prompt("Ingrese una imagen de la mascota");
-  let nombre = prompt("Ingrese una nueva mascota");
-  let vacunas = Number(prompt("Cuantas vacunas tiene?"));
-  let tipo = prompt("Tipo de mascota");
-  let edad = prompt("Edad de la mascota");
-
-  let mascota = new Mascota(
-    catalogoMascotas.darCantidad() + 1,
-    img,
-    nombre,
-    vacunas,
-    tipo,
-    edad
-  );
-  catalogoMascotas.agregarMascota(mascota);
-
-  console.log("CATALOGO MASCOTAS", catalogoMascotas);
-}*/
-
-function listarMascotas() {
-  const nodoPrincipal = document.getElementById("mainContent");
-  nodoPrincipal.innerHTML = "";
-  nodoPrincipal.setAttribute("style", "display:flex");
-  catalogoMascotas.mascotas.forEach((mascotas) => {
-    const divMascotas = document.createElement("div");
-    divMascotas.innerHTML = `<div><img src=${mascotas.img} width="250px"></div>
-                              <hr>                      
-                              <h3>${mascotas.nombre}</h3>
-                              <div class='vacunasMascotas'> (${mascotas.vacunas})</div>
-                              <div class='tipoDeMascota'> (${mascotas.tipo})</div>
-                              <div>${mascotas.edad}</div>`;
-
-    nodoPrincipal.appendChild(divMascotas);
-  });
-}
-
-function buscarMascotas() {
-  let tipoABuscar = document.getElementById("buscador");
-  catalogoMascotas.buscar(tipoABuscar);
-}
-
-function ordenarMascotas() {
-  catalogoMascotas.ordenarMascotas();
-}
 
 modoLightDark();
 botonesLightDark();

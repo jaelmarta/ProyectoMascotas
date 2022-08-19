@@ -33,15 +33,15 @@ header {
         margin-left: 2%;
     }
 
-    #mainMenu {
-        display: flex;
+    .navMenu li {
+        display: inline-block;
+        list-style: none;
+        text-decoration:none;
         justify-content: space-between;
         margin-right: 2%;
         align-items: center;
         top: 0;
-
-        .boton {
-            width: 100px;
+        width: 100px;
             border-radius: 5px;
             background-color: rgb(255, 255, 255);
             border: 0px solid rgb(0, 0, 0);
@@ -51,11 +51,13 @@ header {
             font-weight: 700;
             font-size: 1em;
 
+                   
+
             &:hover {
                 background-color: rgb(236, 183, 183);
                 border: 2px solid rgb(0, 0, 0);
             }
-        }
+        
     }
 
 }
