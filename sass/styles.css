@@ -2,6 +2,17 @@
   font-family: "Varta", sans-serif;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.pagina {
+  position: relative;
+  min-height: 100%;
+}
+
 header .flexContainer {
   display: -ms-flex;
   display: flex;
@@ -23,34 +34,83 @@ header .logo {
   margin-left: 2%;
 }
 header .navMenu li {
-  display: inline-block;
+  display: inline-flex;
   list-style: none;
-  text-decoration: none;
   justify-content: space-between;
   margin-right: 2%;
   align-items: center;
   top: 0;
   width: 100px;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-  border: 0px solid rgb(0, 0, 0);
-  cursor: hand;
-  cursor: pointer;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1em;
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+  margin-top: 15%;
+}
+header .navMenu li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 header .navMenu li:hover {
   background-color: rgb(236, 183, 183);
-  border: 2px solid rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+}
+
+form {
+  width: 50em;
+  padding: 5em;
+  border-radius: 10px;
+  margin: auto;
+  background-color: rgb(149, 163, 128);
+}
+form label {
+  width: 95%;
+  font-weight: bold;
+}
+form input[type=text],
+form input[type=email] {
+  width: 100%;
+  padding: 3px 10px;
+  border: 1px solid #f6f6f6;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  margin: 8px 0;
+  display: inline-block;
+}
+form select {
+  display: flex;
+  justify-content: flex-end;
+}
+form input[type=submit] {
+  width: 100%;
+  padding: 8px 16px;
+  margin-top: 5em;
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: block;
+  color: #fff;
+  background-color: #000;
+}
+form input[type=submit]:hover {
+  cursor: pointer;
+}
+form textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #f6f6f6;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  margin: 8px 0;
+  resize: none;
+  display: block;
 }
 
 footer {
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  height: 10%;
+  bottom: 0;
   width: 100%;
+  height: 60px;
 }
 footer button {
   background-color: white;

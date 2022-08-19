@@ -3,15 +3,15 @@ class CatalogoMascotas {
     this.mascotas = mascotas;
   }
 
-  /*agregarMascota(mascotas) {
+ agregarMascota(mascotas) {
         this.mascotas.push(mascotas);
-    }*/
-
-  darCantidad() {
-    return this.mascotas.length;
+    }
   }
+   /*darCantidad() {
+    return this.mascotas.length;
+  }*/
 
-  listarMascotas() {
+  /*listarMascotas() {
     this.mascotas.forEach((mascotas) => {
       console.log("LISTADO", mascotas);
     });
@@ -56,4 +56,4 @@ class CatalogoMascotas {
     });
     console.log("ORDENADO", this.mascotas);
   }
-}
+}*/
