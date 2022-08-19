@@ -26,9 +26,9 @@
                 </div>
                 <div class="navMenu">
                     <ul>
-                        <li><a href="adoptar.html"> Quiero adoptar</li>
-                        <li><a href="darAdopcion.html">Quiero dar en adopción</li>
-                        <li><a href="contacto.html">Contacto</li>
+                        <li><a href="adoptar.html"> Quiero adoptar</a></li>
+                        <li><a href="darAdopcion.html">Quiero dar en adopción</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="searchBar">
@@ -50,27 +50,19 @@
             </h2>
         </main>
         <section id="formularioAdopcion">
-            <form class="col-12 sm-col-8 mx-auto" id="new_adoption_request" action="/adoption_requests" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="nTJ9V4uxWcOLrxFHOhVagalLrwWchEQgS9kDtNwJxmu3CLUQBKIbvCEqIvMY2jRTMGChKLbmCI5SAk7NCHWy9A==">
-                <input data-adoption-request-pet-id="" required="required" type="hidden" name="adoption_request[pet_id]" id="adoption_request_pet_id" value="10631">
-                <input placeholder="Nombre completo" class="col-12 mb2 rounded field" required="required" type="text" name="adoption_request[full_name]" id="adoption_request_full_name">
-          
-                <input placeholder="Teléfono" class="col-12 mb2 rounded field" required="required" type="text" name="adoption_request[phone_number]" id="adoption_request_phone_number">
-          
-                <input placeholder="Correo electrónico" class="col-12 mb2 rounded field" required="required" type="email" name="adoption_request[email]" id="adoption_request_email">
-          
-                <textarea placeholder="¿Por qué quieres adoptar?" class="col-12 mb2 rounded field" required="required" name="adoption_request[adopt_reason]" id="adoption_request_adopt_reason"></textarea>
-          
-                <textarea placeholder="¿Dónde y con quiénes vivirá este animal?" class="col-12 mb2 rounded field" required="required" name="adoption_request[home_details]" id="adoption_request_home_details"></textarea>
-          
-                <label class="center block bold mb2">
-                  <input name="adoption_request[allow_notifications]" type="hidden" value="0"><input required="required" type="checkbox" value="1" checked="checked" name="adoption_request[allow_notifications]" id="adoption_request_allow_notifications">
-                  Quiero recibir notificaciones de mi solicitud e información sobre animales similares.
-                </label>
-          
-                <p class="center">
-                  <input type="submit" name="commit" value="Enviar mis datos" class="btn btn-primary">
-                </p>
-          </form>
+            <form>
+                <input id="formularioNombre"placeholder="Nombre completo" required="required" type="text">
+                <input id="formularioTelefono" placeholder="Teléfono" required="required" type="text">
+                <input id="formularioCorreo" placeholder="Correo electrónico" required="required" type="email">
+                <label>¿Que mascota querés adoptar?</label>
+                <select id="formularioSelector">
+
+                </select>
+                <textarea id="formularioPorQue" placeholder="¿Por qué querés adoptar?" required="required"></textarea>
+                <textarea id="formularioDondeYQuien" placeholder="¿Dónde y con quiénes vivirá este animal?" required="required"></textarea>
+                <input id="formularioCheck" type="checkbox"><label for="cbox2">Quiero recibir notificaciones de mi solicitud e información sobre adopciones similares</label>
+                <input id="botonAdoptar" type="button" name="commit" value="Enviar solicitud">
+            </form>
         </section>
     </div>
     <footer>
@@ -82,7 +74,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.27/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
