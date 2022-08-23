@@ -11,6 +11,7 @@ html, body {
     position: relative;
     min-height: 100%;
 }
+
 header {
 
     .flexContainer {
@@ -72,7 +73,10 @@ header {
     }
 
 }
-
+p {
+    font-size: 2em;
+    text-align: center;
+}
 form {
 
     width: 50em;

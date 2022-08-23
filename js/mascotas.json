@@ -1,0 +1,68 @@
+{
+    "mascotas" : [
+        {
+            "id": 1,
+            "img":"./img/Emma.png",
+            "nombre": "Emma",
+            "vacunas":5,
+            "tipo":"Gato",
+            "edad":1
+
+        },
+        {
+            "id": 2,
+            "img":"./img/Godzilla.jpeg",
+            "nombre":"Godzilla",
+            "vacunas":2,
+            "tipo":"Gato",
+            "edad":1
+
+        },
+        {
+            "id": 3,
+            "img":"./img/Luz.jpg",
+            "nombre":"Luz",
+            "vacunas":6,
+            "tipo":"Perro",
+            "edad":11
+
+        },
+        {
+            "id": 4,
+            "img":"./img/Riff.jpeg",
+            "nombre":"Riff",
+            "vacunas":12,
+            "tipo":"Perro",
+            "edad":9
+
+        },
+        {
+            "id": 5,
+            "img":"./img/Bugs.jpg",
+            "nombre":"Bugs",
+            "vacunas":6,
+            "tipo":"Conejo",
+            "edad":4
+
+        },
+        {
+            "id": 6,
+            "img":"./img/Lucas.jpg",
+            "nombre":"Lucas",
+            "vacunas":8,
+            "tipo":"Pato",
+            "edad":2
+
+        },
+        {
+            "id": 7,
+            "img":"./img/Rolo.jpg",
+            "nombre":"Rolo",
+            "vacunas":3,
+            "tipo":"Caballo",
+            "edad":5
+
+        }
+    ]
+    
+}

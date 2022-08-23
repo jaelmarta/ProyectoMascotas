@@ -11,15 +11,16 @@ const mascotas = [
   new Mascota(6, "./img/Lucas.jpg", "Lucas", 8, "Pato", "2"),
   new Mascota(7, "./img/Rolo.jpg", "Rolo", 3, "Caballo", "5"),
 ];
-function id() {
-  mascotas.forEach((e) => (i = id), i > 1, i++);
-  console.log(id);
-}
 const catalogoMascotas = new CatalogoMascotas(mascotas);
-console.log("CATALOGO MASCOTAS", catalogoMascotas.mascotas);
+//console.log("CATALOGO MASCOTAS", catalogoMascotas.mascotas);
 
 
 //Index
+
+  fetch("/js/mascotas.json")
+    .then((res) => res.json())
+    .then((json) => console.log(json));
+
 
 const listarMascotas = (mascotas) => {
   const mascotasDisponibles = document.getElementById("mascotasEnAdopcion");
@@ -146,3 +147,5 @@ function cambiarModo(modo) {
   }
   localStorage.setItem("mode", modo);
 }
+
+

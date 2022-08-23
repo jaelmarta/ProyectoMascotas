@@ -58,6 +58,11 @@ header .navMenu li:hover {
   border: 1px solid rgb(0, 0, 0);
 }
 
+p {
+  font-size: 2em;
+  text-align: center;
+}
+
 form {
   width: 50em;
   padding: 5em;
