@@ -13,7 +13,10 @@
     <script defer src="../js/class/mascotas.class.js"></script>
     <script defer src="../js/class/catalogoMascotas.class.js"></script>
     <script defer src="../js/proyectoMascotas.js"></script>
+    <script defer src="../js/pagAdoptar.js"></script>
     <script defer src="https://kit.fontawesome.com/059d8a4b62.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <title>Proyecto Mascotas</title>
 </head>
 
@@ -41,16 +44,15 @@
         </header>
         <div>
             <main>
+                
+            
+            <section id="formularioAdopcion">
                 <p>
-                    Para adoptar una mascota de Proyecto Mascotas complete el formulario indicando que mascota
-                    desea adoptar.
-                </p>
-                <p>
+                    Para adoptar una mascota de Proyecto Mascotas complete el formulario.
                     Su solicitud sera evaluada y sera contactado para informarle los pasos a seguir.
                 </p>
-            </main>
-            <section id="formularioAdopcion">
                 <form>
+                    <p>Ingrese sus datos y mascota a adoptar</p>
                     <input id="formularioNombre" placeholder="Nombre completo" required="required" type="text">
                     <input id="formularioTelefono" placeholder="Teléfono" required="required" type="text">
                     <input id="formularioCorreo" placeholder="Correo electrónico" required="required" type="email">
@@ -67,6 +69,7 @@
                     <input id="botonAdoptar" type="button" name="commit" value="Enviar solicitud">
                 </form>
             </section>
+        </main>
         </div>
     </div>
     <footer>
