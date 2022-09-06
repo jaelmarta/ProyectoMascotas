@@ -1,47 +1,52 @@
 //Dar en adopcion
 
+let formularioDosNombre=document.getElementById("formularioDosNombre").value;
+let formularioDosTelefono=document.getElementById("formularioDosTelefono").value;
+let formularioDosCorreo=document.getElementById("formularioDosCorreo").value;
+let formularioDosPorQue=document.getElementById("formularioDosPorQue").value;
+let nombreMascota=document.getElementById("nombreMascota").value;
+let vacunasMascota=document.getElementById("vacunasMascota").value;
+let tipoMascota=document.getElementById("tipoMascota").value;
+let edadMascota=document.getElementById("edadMascota").value;
+let botonPublicar=document.getElementById("botonPublicar").value;
+
 function crearPost() {
-    let formularioDosNombre=document.getElementById("formularioDosNombre").value;
-    let formularioDosTelefono=document.getElementById("formularioDosTelefono").value;
-    let formularioDosCorreo=document.getElementById("formularioDosCorreo").value;
-    let formularioDosPorQue=document.getElementById("formularioDosPorQue").value;
-    let imagenMascota=document.getElementById("imagenMascota").value;
-    let nombreMascota=document.getElementById("nombreMascota").value;
-    let vacunasMascota=document.getElementById("vacunasMascota").value;
-    let tipoMascota=document.getElementById("tipoMascota").value;
-    let edadMascota=document.getElementById("edadMascota").value;
-    let botonPublicar=document.getElementById("botonPublicar").value;
+     mascotas.push(
+      new Mascota(mascotas.length + 1, "../img/adoption.jpg", nombreMascota,  vacunasMascota, tipoMascota, edadMascota)
+    );
+localStorage.setItem("mascotasJson", JSON.stringify(mascotas));
+  }
 
-
-    fetch("/js/mascotas.json", {
-      method: 'POST',
-      body: JSON.stringify({
-        id: (mascotas.length)+1,
-        imagenMascota: imagenMascota, 
-        nombreMascota: nombreMascota, 
-        vacunasMascota: vacunasMascota,
-        tipoMascota: tipoMascota, 
-        edadMascota: edadMascota,
-        botonPublicar: botonPublicar,
-
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => alert("Se creó la mascota "+json.nombreMascota))
-      .catch((error)=>alert(error));
-
+  function obtenerDatos(){
+    edadMascota=document.getElementById("edadMascota").value;
+    tipoMascota=document.getElementById("tipoMascota").value;
+    tipoMascota=document.getElementById("tipoMascota").value;
+    vacunasMascota=document.getElementById("vacunasMascota").value;
+    nombreMascota=document.getElementById("nombreMascota").value;
   }
   
 document.getElementById("botonPublicar").addEventListener("click", (json)=> {
+    obtenerDatos();
+    crearPost();
     Swal.fire({
       title: `Muchas gracias!`,
-      text: `Tu solicitud para publicar a ${json.nombreMascota} fue enviada.`,
-      imageUrl:`${json.imagenMascota}`,
+      text: `Tu solicitud para publicar a ${nombreMascota} fue enviada.`,
+      imageUrl:"../img/adoption.jpg",
       imageWidth: 400,
       imageHeight: 200,
-      imageAlt: `${json.nombreMascota}`,
+      imageAlt: `${nombreMascota}`,
     })
+
+    /*localStorage.setItem (
+        "Nombre", formularioDosNombre,
+        "Telefono", formularioDosTelefono,
+        "Correo", formularioDosCorreo,
+        "Por que da en adopcion", formularioDosPorQue,
+        "Imagen Mascota", imagenMascota,
+        "Nombre Mascota", nombreMascota,
+        "Vacunas Mascota", vacunasMascota,
+        "Tipo de Mascota", tipoMascota,
+        "Edad Mascota", edadMascota,
+        
+    )*/
 })
